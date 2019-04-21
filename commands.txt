@@ -1,6 +1,5 @@
 
 #### DJANGO
-
 django-admin startproject portfolio
 pip install django==2.2
 python manage.py runserver
@@ -28,7 +27,7 @@ python manage.py collectstatic
 \du
 
 # set password
-\password <postgrees>
+\password <postgrees89>
 
 # create a database
 CREATE DATABASE <portfoliodb>;
