@@ -106,7 +106,7 @@ p{
 
 
 .btn-category{color: #d38165; background-color: rgba(248, 239, 230, 0.31);border-color: transparent;
-    font-family: PT Sans;
+    font-family: 'PT Sans', sans-serif;
     font-weight: bold;
     -webkit-font-smoothing: antialiased;
     font-size: 0.7em;}
@@ -131,7 +131,7 @@ footer{
 }
 
 .card-subtitle{
-    font-family: PT Sans;
+    font-family: 'PT Sans', sans-serif;
     font-weight: lighter;
     -webkit-font-smoothing: antialiased;
     font-size: 0.7em;
@@ -220,7 +220,7 @@ footer{
 .card-text{
     color: inherit;
     line-height: 20px;
-    font-family: "Noto Sans";
+    font-family: 'Noto Sans', sans-serif;
     font-size:0.9em;
     text-decoration: none;
     -webkit-font-smoothing: antialiased;
@@ -246,7 +246,7 @@ a.custom-card:hover {
 }
 
 .photo-author{
-    font-family: "Noto Sans";
+    font-family: 'Noto Sans', sans-serif;
     font-size: 0.8em;
     font-style: oblique;
 }
