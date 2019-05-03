@@ -1,5 +1,5 @@
 h1{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 2em;
     color: #685f58;
 }
@@ -199,7 +199,7 @@ footer{
 .card-title{
     font-size:1.4em;
     color: inherit;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Raleway', sans-serif;
     font-weight: bolder;
     font-variant:small-caps;
     -webkit-font-smoothing: antialiased;
@@ -208,7 +208,7 @@ footer{
 .card-title2{
     font-size:3em;
     line-height: 1;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Raleway', sans-serif;
     color: #685f58;
     font-variant:small-caps;
     letter-spacing: 0.01em;
