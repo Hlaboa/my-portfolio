@@ -17,7 +17,7 @@ h1{
 
 body{
     font-size: 1.1em;
-    font-family: "Times New Roman", Times, serif;
+    font-family: 'Times New Roman', Times, serif;
     background-color: #f2f2f2
 }
 
@@ -199,7 +199,7 @@ footer{
 .card-title{
     font-size:1.4em;
     color: inherit;
-    font-family: "Merryweather";
+    font-family: Times, serif;
     font-weight: bolder;
     font-variant:small-caps;
     -webkit-font-smoothing: antialiased;
@@ -207,9 +207,8 @@ footer{
 
 .card-title2{
     font-size:3em;
-    font-weight: lighter;
     line-height: 1;
-    font-family: "Merryweather";
+    font-family: Times, serif;
     color: #685f58;
     font-variant:small-caps;
     letter-spacing: 0.01em;
