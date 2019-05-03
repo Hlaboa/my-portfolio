@@ -67,7 +67,7 @@ p{
     box-shadow: 0 4px 6px -6px #5c5a4c;
 }
 .btn-secondary{color: #eeefed; background-color:transparent;border-color: transparent;}
-.btn-secondary:hover{color: #5c5a4c;background-color: #e3e6da;border-color: #b9bcb1}
+.btn-secondary:hover{color: #5c5a4c;background-color: #e1e2e0;border-color: transparent}
 .btn-secondary:focus,.btn-secondary.focus{}
 .btn-secondary.disabled,.btn-secondary:disabled{color:#eeefed;background-color:transparent;border-color:transparent}
 .btn-secondary:not(:disabled):not(.disabled):active,.btn-secondary:not(:disabled):not(.disabled).active,.show>.btn-secondary.dropdown-toggle{color: #eeefed;background-color:transparent;border-color:transparent}
