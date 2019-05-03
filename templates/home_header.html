@@ -1,12 +1,12 @@
 {% load static %}
 
-    <div class="wt-75 container-fluid text-center my-4" style="max-width:610px">
+    <div class="wt-75 container-fluid text-center my-4" style="max-width:640px">
         <div class="row">
-            <div class="col">
-                <img class="ml-1 my-2" src="{% static 'img/har.png' %}" style="width:120px"/>
+            <div class="col my-2 mx-5">
+                <img src="{% static 'img/har.png' %}" style="width:130px"/>
             </div>
-            <div class="col text-center">
-                <h1 class="pt-2 pb-3">HARITZ LABOA</h1>
+            <div class="col text-center mx-2">
+                <h1 class="pt-2 pb-3" style="font-size: 1.8em";>HARITZ LABOA</h1>
 
                 {% if language == 'English' %}
                     <p class="my_summary pb-1">
@@ -19,7 +19,7 @@
                     </p>
                 {% endif %}
 
-                <div class="col" style="min-width: max-content">
+                <div class="col">
                     <a class="fab fa-github pr-1" href="https://github.com/Hlaboa" style="color:#d38165"></a>
                     <a class="fab fa-linkedin-in pr-1" href="https://www.linkedin.com/in/hlaboa/" style="color:#d38165"></a>
                     <a class="fab fa-stack-overflow pr-1" href="https://stackoverflow.com/users/10876445/haritz-laboa" style="color:#d38165"></a>
@@ -33,7 +33,7 @@
                     {% endif %}
                 </div>
 
-                <div class="col">
+                <div class="col" style="min-width: max-content">
                     {% if language == 'English' %}
                         <a class="ml-3" href="{% url 'español' %}" style="font-family:'Merryweather'; font-size: 0.8em ; margin-top: 1px; text-decoration: none">
                             <button class="btn btn-lang btn-sm">ES</button>
