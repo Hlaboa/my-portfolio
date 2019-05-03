@@ -17,7 +17,7 @@ h1{
 
 body{
     font-size: 1.1em;
-    font-family: "Merriweather";
+    font-family: "Times New Roman", Times, serif;
     background-color: #f2f2f2
 }
 
@@ -34,7 +34,7 @@ p{
 }
 
 .my_summary{
-    font-family: 'Noto Sans';
+    font-family: "Times New Roman", Times, serif;
     color:  #5c5a4c;
     font-size: 0.8em;
 }
@@ -246,7 +246,7 @@ a.custom-card:hover {
 }
 
 .photo-author{
-    font-family: 'Noto Sans', sans-serif;
+    font-family: "Noto Sans";
     font-size: 0.8em;
     font-style: oblique;
 }
