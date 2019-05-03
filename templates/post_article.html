@@ -1,0 +1,83 @@
+{% load static %}
+
+    <div class="blog pb-4">
+        <p style="color:transparent">.</p>
+        <div class="container-fluid pb-3 px-4" style="max-width:850px;
+                text-align:left;
+                background-color:white;
+                border-radius: 15px 15px;
+                -webkit-box-shadow: 0 8px 10px #5c5a4c;
+                -moz-box-shadow: 0 8px 6px -6px #5c5a4c;
+                box-shadow: 0 10px 20px #3e3a31;
+                z-index:5;
+                overflow: hidden">
+
+            <div class="mx-4">
+                <h5 class="card-title2 pt-5"">{{ post.title }}</h5>
+
+                <div class="container-fluid pt-2" style="padding-left: 0px">
+                    <div class="mb-3">
+                        <p class="card-title pt-1 pr-3" style="font-size: 1.1em ; font-weight: lighter ;font-family: 'Nexa Bold'; float:left">Tags: </p>
+                        {% for tag in post.tags.all %}
+                            <a href="{% url 'tag' tag.id %}" style="font-size: 0.9em ; font-family: PT Sans ; text-decoration: none; color: inherit">
+                                <button class="btn btn-custom btn-sm pt-2 px-3" style="font-family:PT Sans; border-radius: 7%;">
+                                    {{ tag.title }}
+                                </button>
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="container-fluid pt-3" style="padding-left: 0px">
+                    <div class="avatar" style="float: left">
+                        <img src="{{ post.author.profile_picture.url }}" class="img-fluid">
+                    </div>
+                    <div class="author">
+                        {{ post.author.user.author }}
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center flex-wrap mt-1">
+                    <h6 class="pr-2" style="color: #5c5a4c ; font-size: 0.7em; font-family: 'Merriweather Sans', sans-serif; font-weight: 300; float: left" >
+                        {{ post.timestamp|date:'d M Y'}}
+                    </h6>
+                    <div class="views2" style="margin-top: -9px ; color: #5c5a4c ; font-size: 0.7em;">
+                        | &nbsp<i class="fas fa-book-reader small"></i> &nbsp{{ post.read_time }} min read &nbsp
+                    </div>
+                    <div class="views2" style="margin-top: -9px ; color: #5c5a4c ; font-size: 0.7em;">
+                        | &nbsp<i class="far fa-eye small"></i> &nbsp{{ post.view_count }}
+                    </div>
+                </div>
+
+                <div class="cover-post my-2 mb-5">
+                    <img src="{{ post.post_image.url }}" class="img-fluid" style="width: max-content">
+                    <div class="photo-author">
+                        Photo by <a class="photo-link" style="text-decoration: none; color:#685f58" href={{ post.cover_author_link }} >{{ post.cover_author }}</a>
+                    </div>
+                </div>
+
+                <div class="post-content">
+                    {{ post.content|safe }}
+                </div>
+
+
+
+                <!--- DiSQUS  --->
+                <div id="disqus_thread"></div>
+
+                <script>
+                    (function() {
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://hlaboa.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+
+                <noscript>
+                    Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+                </noscript>
+
+            </div>
+        </div>
+    </div>

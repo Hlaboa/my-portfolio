@@ -1,0 +1,45 @@
+<!doctype html>
+{% load static %}
+{% include "head.html" %}
+
+<title> Haritz Laboa</title>
+</head>
+
+<body>
+
+    {% include "post_navbar.html" %}
+
+    <div class="blog pb-4">
+        <p style="color:transparent">.</p>
+        <div class="container-fluid pb-3 px-4" style="max-width:850px;
+                    text-align:left;
+                    background-color:white;
+                    border-radius: 15px 15px;
+                    -webkit-box-shadow: 0 8px 10px #5c5a4c;
+                    -moz-box-shadow: 0 8px 6px -6px #5c5a4c;
+                    box-shadow: 0 10px 20px #3e3a31;
+                    z-index:5;
+                    overflow: hidden">
+            <div class="mx-4">
+
+            {% if language == 'English' %}
+                    <h5 class="card-title2 py-5"">About Me</h5>
+            {% endif %}
+            {% if language == 'Español' %}
+                    <h5 class="card-title2 py-5"">Sobre Mí</h5>
+            {% endif %}
+
+            {% if language == 'English' %}
+                {{ about.english|safe }}
+            {% endif %}
+
+            {% if language == 'Español' %}
+                {{ about.español|safe }}
+            {% endif %}
+            </div>
+        </div>
+    </div>
+
+</body>
+
+{% include "footer.html" %}

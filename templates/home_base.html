@@ -1,0 +1,125 @@
+{% load static %}
+
+    <!-- NAVBAR -->
+    <div class="sticky-top">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-navbar_home">
+            <div class="container-fluid text-center" style="max-width:880px">
+                <button id="filtros" type="button" class="btn btn-secondary" data-toggle="collapse" href="#collapseFilter" role="button" aria-expanded="false" aria-controls="collapseFilter" style="font-family: Merriweather">▼ Tags</button>
+            </div>
+        </nav>
+        <div id="collapseFilter" class="filter_wrapper collapse py-2">
+            <div class="scroll_nav container-fluid text-center" style="max-width:880px">
+                <div class="btn-group">
+                    <button  id="all_button" type=button class="active btn btn-category btn-sm filter-button mb-1" style="border-radius:8px" data-filter="all">Show All</button>
+                    {% for tag in tags %}
+                        <button id="button{{ tag.id }}" type=button class="btn btn-category btn-sm filter-button mb-1" style="border-radius:8px" data-filter={{ tag.id }}>{{ tag }}</button>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- CARDS -->
+    <div class="blog" style="padding-bottom: 40px">
+        <div class="container-fluid text-center" style="max-width:800px">
+            <div class="row">
+                <div class="card-columns" style="margin-top:30px">
+
+                    <!-- NO CATEGORY-->
+                    {% for post in posts.all %}
+                        <div class="filter
+                            {% for tag in post.tags.all %}
+                                {{ tag.id }}
+                            {% endfor %}">
+
+                        <a class="custom-card" href={% url 'post' post.id %}>
+                            <div class="card">
+                                <img src="{{ post.overview_image.url }}" class="card-img-top"/>
+                                <div class="card-body">
+                                    <h6 class="card-title">{{ post.title }}</h6>
+
+                                    <div class="d-flex align-items-center flex-wrap">
+                                        <h6 class="pr-2" style="color: #c7c7c7 ; font-size: 0.6em; font-family: 'Merriweather Sans', sans-serif; font-weight: 300; float: left" >{{ post.timestamp|date:'d M Y'}}</h6>
+                                        <div class="views" style="margin-top: -8px">
+                                            | &nbsp {{ post.read_time }} min read &nbsp
+                                        </div>
+                                        <div class="views" style="margin-top: -7px">| &nbsp <i class="far fa-eye small"></i> &nbsp{{ post.view_count }}</div>
+                                    </div>
+
+                                    <p class="card-text">{{ post.overview }}</p>
+                                    <div class="row px-2 mt-4">
+
+                                        {% for tag in post.tags.all %}
+                                          <p class="card-subtitle mx-1 px-1 py-1">{{ tag.title }}</p>
+                                      {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        </div>
+                    {% endfor %}
+
+                    {% if category %}
+                        <script>
+                            $(document).ready(function()
+                            {
+                                var value = "{{ category }}"
+                                $(".filter").not('.'+value).hide('3000');
+                                $('.filter').filter('.'+value).show('3000');
+                                $(".btn-group > .btn").removeClass("active");
+                                $('#button'+eval(value)).addClass("active");
+                                $('#collapseFilter').addClass("show");
+                                console.log("hiiii")
+                                $('#filtros').text('▲ Tags')
+                            });
+                        </script>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--- SCRIPTS  -->
+    <!--- DIV FILTERING -->
+    <script>
+        $(".filter-button").click(function(){
+
+                var value = $(this).attr('data-filter');
+                console.log(value)
+
+                if(value == "all")
+                {
+                    $('.filter').show('1000');
+                }
+                else
+                {
+                    $(".filter").not('.'+value).hide('3000');
+                    $('.filter').filter('.'+value).show('3000');
+                    $(".btn-group > .btn").removeClass("active");
+                    $(".filter").addClass("active");
+                }
+            });
+    </script>
+
+    <!--- DIV FILTERING 2 -->
+    <script>
+        $('#filtros').click(function(){ //you can give id or class name here for $('button')
+
+            $(this).text(function(i,old){
+                if (old == '▲ Tags'){
+                    $('.filter').show('1000');
+                    $(".btn-group > .btn").removeClass("active");
+                    $('#all_button').addClass("active");
+                }
+                return old=='▼ Tags' ?  '▲ Tags' : '▼ Tags';});
+            });
+    </script>
+
+    <!--- CHANGE TAG NAME -->
+    <script>
+        $(".btn-group > .btn").click(function(){
+            $(".btn-group > .btn").removeClass("active");
+            $(this).addClass("active");
+        });
+    </script>

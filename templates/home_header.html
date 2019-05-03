@@ -1,0 +1,61 @@
+{% load static %}
+
+    <div class="wt-75 container-fluid text-center my-4" style="max-width:610px">
+        <div class="row">
+            <div class="col">
+                <img class="ml-1 my-2" src="{% static 'img/har.png' %}" style="width:120px"/>
+            </div>
+            <div class="col text-center">
+                <h1 class="pt-2 pb-3">HARITZ LABOA</h1>
+
+                {% if language == 'English' %}
+                    <p class="my_summary pb-1">
+                        I'm a courious <strong>data scientist</strong> who loves to pull the thread... and see what happens
+                    </p>
+                {% endif %}
+                {% if language == 'Español' %}
+                    <p class="my_summary pb-1">
+                        soy un <strong>data scientist</strong> curioso a quien le encanta tirar del hilo... y ver qué sucede
+                    </p>
+                {% endif %}
+
+                <div class="col" style="min-width: max-content">
+                    <a class="fab fa-github pr-1" href="https://github.com/Hlaboa" style="color:#d38165"></a>
+                    <a class="fab fa-linkedin-in pr-1" href="https://www.linkedin.com/in/hlaboa/" style="color:#d38165"></a>
+                    <a class="fab fa-stack-overflow pr-1" href="https://stackoverflow.com/users/10876445/haritz-laboa" style="color:#d38165"></a>
+                    <a class="fas fa-envelope pr-1" href="mailto:hlaboa@gmail.com" style="color:#d38165"></a>
+
+                    {% if language == 'English' %}
+                        <a class="ml-3" href="{% url 'about' %}" style="color:#d38165; font-size:0.7em ; font-family: 'Helvetica Neue'">about me</a>
+                    {% endif %}
+                    {% if language == 'Español' %}
+                        <a class="ml-3" href="{% url 'about' %}" style="color:#d38165; font-size:0.7em ; font-family: 'Helvetica Neue'">sobre mí</a>
+                    {% endif %}
+                </div>
+
+                <div class="col">
+                    {% if language == 'English' %}
+                        <a class="ml-3" href="{% url 'español' %}" style="font-family:'Merryweather'; font-size: 0.8em ; margin-top: 1px; text-decoration: none">
+                            <button class="btn btn-lang btn-sm">ES</button>
+                        </a>
+                        <button class="btn btn-lang_bar" style="font-family:'Merryweather'; font-size: 0.8em ; margin-top: 1px ; margin-right: -10px; margin-left: -12px" disabled>|</button>
+                        <button class="btn btn-lang_cur btn-sm pt-1" style="font-family:'Merryweather'; font-size: 0.7em ; margin-top: -3px;"disabled>
+                            <i class="fas fa-globe-europe small pt-2" style="margin-top:-2px; margin-left: -2px"></i> EN
+                        </button>
+
+                    {% endif %}
+
+                    {% if language == 'Español' %}
+                        <button class="btn btn-lang_cur btn-sm ml-3" style="font-family:'Merryweather'; font-size: 0.8em ; margin-top: 1px" disabled>ES</button>
+                        <button class="btn btn-lang_bar" style="font-family:'Merryweather'; font-size: 0.8em ; margin-top: 1px; ; margin-right: -10px; margin-left: -12px" disabled>|</button>
+                        <a href="{% url 'english' %}">
+                            <button class="btn btn-lang btn-sm" style="font-family:'Merryweather'; font-size: 0.7em ; margin-top: -3px;">
+                                <i class="fas fa-globe-europe small pt-2" style="margin-top:-2px; margin-left: -2px"></i> EN
+                            </button>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
