@@ -41,10 +41,13 @@
                     <h6 class="pr-2" style="color: #5c5a4c ; font-size: 0.7em; font-family: 'Merriweather Sans', sans-serif; font-weight: 300; float: left" >
                         {{ post.timestamp|date:'d M Y'}}
                     </h6>
-                    <div class="views2" style="margin-top: -9px ; color: #5c5a4c ; font-size: 0.7em;">
-                        | &nbsp<i class="fas fa-book-reader small"></i> &nbsp{{ post.read_time }} min read &nbsp
+                    <div class="views2" style="margin-top: -8px ; color: #5c5a4c ; font-size: 0.7em; font-family: 'Merriweather Sans', sans-serif;">
+                        | &nbsp
                     </div>
-                    <div class="views2" style="margin-top: -9px ; color: #5c5a4c ; font-size: 0.7em;">
+                    <div class="views2" style="margin-top: -10px ; color: #5c5a4c ; font-size: 0.7em; font-family: 'Merriweather Sans', sans-serif;">
+                        <i class="fas fa-book-reader small" style="margin-top: -15px"></i> &nbsp{{ post.read_time }} min read &nbsp
+                    </div>
+                    <div class="views2" style="margin-top: -10px ; color: #5c5a4c ; font-size: 0.7em; font-family: 'Merriweather Sans', sans-serif;">
                         | &nbsp<i class="far fa-eye small"></i> &nbsp{{ post.view_count }}
                     </div>
                 </div>
