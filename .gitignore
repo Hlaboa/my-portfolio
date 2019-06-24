@@ -33,7 +33,7 @@ db.sqlite3
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon?
 
 # Thumbnails
 ._*
@@ -211,5 +211,3 @@ ENV/
 
 # mkdocs documentation
 /site
-
-# End of https://www.gitignore.io/api/macos,linux,django,python,pycharm

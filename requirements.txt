@@ -1,6 +1,7 @@
-certifi==2019.3.9
-Django==2.2
+certifi==2019.6.16
+Django==2.2.2
 django-filebrowser-no-grappelli==3.7.8
+django-filter==2.1.0
 django-tinymce4-lite==1.7.5
 gunicorn==19.9.0
 jsmin==2.2.2
