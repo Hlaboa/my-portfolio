@@ -1,7 +1,7 @@
 {% load static %}
 <meta property='og:title' content='{{ post.title }}'/>
-<meta property='og:image' content='{{ post.post_image.url }}'/>
 <meta property='og:description' content='{{ post.overview }}'/>
+<meta name="image" property="og:image" content={{ post.post_image.url }}>
 
     <div class="blog pb-4">
         <p style="color:transparent">.</p>
