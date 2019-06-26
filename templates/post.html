@@ -3,9 +3,15 @@
 {% include "head.html" %}
 
 <title> Haritz Laboa - {{ post.title }}</title>
-<meta property='og:title' content='{{ post.title }}'/>
-<meta property='og:description' content='{{ post.overview }}'/>
+
+<meta name="title" property="og:title" content="{{ post.title }}">
+
+<!-- LINKEDIN -->
+<meta property='og:title' content=''/>
+<meta name="description" property="og:description" content='{{ post.overview }}'/>
 <meta name="image" property="og:image" content='{{ post.post_image.url }}'>
+<meta name="author" content='{{ post.author.user.author }}'>
+
 </head>
 
 <body>
