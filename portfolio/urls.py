@@ -10,10 +10,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('admin/filebrowser/', site.urls),
     path('', blog.views.home, name='home'),
-    path('<slug:slug>/', blog.views.post, name='post'),
+    path('about/', blog.views.about, name='about'),
+    path('post/<slug:slug>/', blog.views.post, name='post'),
     path('tag/<slug:tag_slug>/', blog.views.category_manage, name='tag'),
     path('tinymce/', include('tinymce.urls')),
-    path('about/', blog.views.about, name='about'),
     path('en/',blog.views.english, name='english'),
     path('es/',blog.views.español, name='español'),
     path('robots.txt', TemplateView.as_view(template_name='robots.txt', content_type='text/plain'))

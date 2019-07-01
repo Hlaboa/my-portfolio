@@ -79,6 +79,7 @@ def post(request, slug):
     response = render(request, 'post.html', {'post': detail_post})
 
     if str(slug) not in request.COOKIES:
+        print(str(slug))
         response.set_cookie(str(slug), max_age=300)
         detail_post.view_count += 1
         Post.objects.filter(slug=slug).update(view_count=detail_post.view_count)
