@@ -37,7 +37,7 @@ class Language(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=200,default='')
-    slug = models.SlugField(max_length=150, default=get_random_number)
+    slug = models.SlugField(max_length=150, unique=True)
     overview = models.TextField(default='')
     content = HTMLField()
     tags = models.ManyToManyField(Tag)
