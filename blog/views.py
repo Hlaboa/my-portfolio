@@ -73,14 +73,14 @@ def about(request):
 
 ##################
 
-def post(request, post_id):
-    detail_post = get_object_or_404(Post, pk=post_id)
+def post(request, slug):
+    detail_post = get_object_or_404(Post, slug=slug)
     response = render(request, 'post.html', {'post': detail_post})
 
-    if str(post_id) not in request.COOKIES:
-        response.set_cookie(str(post_id), max_age=300)
+    if str(slug) not in request.COOKIES:
+        response.set_cookie(str(slug), max_age=300)
         detail_post.view_count += 1
-        Post.objects.filter(pk=post_id).update(view_count=detail_post.view_count)
+        Post.objects.filter(slug=slug).update(view_count=detail_post.view_count)
 
     return response
 

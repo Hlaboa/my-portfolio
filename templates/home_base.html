@@ -33,7 +33,7 @@
                                 {{ tag.id }}
                             {% endfor %}">
 
-                        <a class="custom-card" href={% url 'post' post.id %}>
+                        <a class="custom-card" href={% url 'post' post.slug  %}>
                             <div class="card">
                                 <img src="{{ post.overview_image.url }}" class="card-img-top"/>
                                 <div class="card-body">

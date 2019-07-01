@@ -1,6 +1,12 @@
 from django.db import models
+import random
+
 from tinymce import HTMLField
 from django.contrib.auth import get_user_model
+
+# default to 1 day from now
+def get_random_number():
+  return random.randint(1,1001)
 
 User = get_user_model()
 
@@ -31,6 +37,7 @@ class Language(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=200,default='')
+    slug = models.SlugField(max_length=150, default=get_random_number)
     overview = models.TextField(default='')
     content = HTMLField()
     tags = models.ManyToManyField(Tag)
@@ -50,3 +57,7 @@ class Post(models.Model):
 
     class Meta:
         ordering = ('timestamp',)
+
+    def save(self, *args, **kwargs):
+        self.slug = self.slug or slugify(self.title)
+        super().save(*args, **kwargs)

@@ -10,7 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('admin/filebrowser/', site.urls),
     path('', blog.views.home, name='home'),
-    path('<int:post_id>/', blog.views.post, name='post'),
+    path('<slug:slug>/', blog.views.post, name='post'),
     path('tag/<int:tag_id>/', blog.views.category_manage, name='tag'),
     path('tinymce/', include('tinymce.urls')),
     path('about/', blog.views.about, name='about'),
