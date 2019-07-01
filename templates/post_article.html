@@ -2,7 +2,7 @@
 
     <div class="blog pb-4">
         <p style="color:transparent">.</p>
-        <div class="container-fluid pb-3 px-4" style="max-width:850px;
+        <div class="container-fluid pb-3 px-4" style="max-width:1024px;
                 text-align:left;
                 background-color:white;
                 border-radius: 15px 15px;
@@ -13,13 +13,13 @@
                 overflow: hidden">
 
             <div class="mx-lg-5 mx-md-4">
-                <h5 class="card-title2 pt-5" style="font-family: 'Times New Roman', Times, serif">{{ post.title }}</h5>
+                <h3 class="card-title2 pt-5">{{ post.title }}</h3>
 
                 <div class="container-fluid pt-2" style="padding-left: 0px">
                     <div class="mb-3">
-                        <p class="card-title pt-1 pr-3" style="font-size: 1.1em ; font-weight: lighter ;font-family: 'Nexa Bold'; float:left">Tags: </p>
+                        <p class="card-title pt-1 pr-3" style="font-weight: lighter ;font-family: 'Nexa Bold'; float:left">Tags: </p>
                         {% for tag in post.tags.all %}
-                            <a href="{% url 'tag' tag.id %}" style="font-size: 0.9em ; font-family: PT Sans ; text-decoration: none; color: inherit">
+                            <a href="{% url 'tag' tag.id %}" style="font-family: PT Sans ; text-decoration: none; color: inherit">
                                 <button class="btn btn-custom btn-sm pt-2 px-3" style="font-family:PT Sans; border-radius: 7%;">
                                     {{ tag.title }}
                                 </button>
@@ -58,12 +58,9 @@
                         Photo by <a class="photo-link" style="text-decoration: none; color:#685f58" href={{ post.cover_author_link }} >{{ post.cover_author }}</a>
                     </div>
                 </div>
-
-                <div class="post-content" styl>
+                <div class="post-content">
                     {{ post.content|safe }}
                 </div>
-
-
 
                 <!--- DiSQUS  --->
                 <div id="disqus_thread"></div>
@@ -84,3 +81,28 @@
             </div>
         </div>
     </div>
+
+
+    <!--- DIV FILTERING CODE -->
+    <script>
+        $('.btn.btn-code.btn-sm').click(function(){ //you can give id or class name here for $('button')
+
+            $(this).text(function(i,old){
+                if (old == '- Hide code'){
+                    $(this).css('margin-bottom','0px');
+                }
+                else{
+                    $(this).css('margin-bottom','-20px');
+
+                }
+                return old=='+ Show code' ?  '- Hide code' : '+ Show code';});
+            });
+    </script>
+
+    <!--- DIV FILTERING DESCR -->
+    <script>
+        $('.btn.btn-descr.btn-sm').click(function(){ //you can give id or class name here for $('button')
+            $(this).text(function(i,old){
+                return old=='Mostrar descripción de las variables...' ?  'Ocultar descripción de las variables' : 'Mostrar descripción de las variables...';});
+            });
+    </script>

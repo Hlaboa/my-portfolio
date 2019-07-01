@@ -23,18 +23,22 @@
             <div class="mx-4">
 
             {% if language == 'English' %}
-                    <h5 class="card-title2 py-5" style="font-family: 'Times New Roman', Times, serif">About Me</h5>
+                <h3 class="card-title2 py-5">About Me</h3>
             {% endif %}
             {% if language == 'Español' %}
-                    <h5 class="card-title2 py-5" style="font-family: 'Times New Roman', Times, serif">Sobre Mí</h5>
+                <h3 class="card-title2 py-5">Sobre Mí</h3>
             {% endif %}
 
             {% if language == 'English' %}
-                {{ about.english|safe }}
+                <div class="post-content">
+                    {{ about.english|safe }}
+                </div>
             {% endif %}
 
             {% if language == 'Español' %}
-                {{ about.español|safe }}
+                <div class="post-content">
+                    {{ about.español|safe }}
+                </div>
             {% endif %}
             </div>
         </div>
