@@ -11,7 +11,7 @@ urlpatterns = [
     path('admin/filebrowser/', site.urls),
     path('', blog.views.home, name='home'),
     path('<slug:slug>/', blog.views.post, name='post'),
-    path('tag/<int:tag_id>/', blog.views.category_manage, name='tag'),
+    path('tag/<slug:tag_slug>/', blog.views.category_manage, name='tag'),
     path('tinymce/', include('tinymce.urls')),
     path('about/', blog.views.about, name='about'),
     path('en/',blog.views.english, name='english'),

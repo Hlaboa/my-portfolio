@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
-from .models import Post, About
+from .models import Post, About, Tag
 
 @csrf_exempt
 def home(request):
@@ -31,7 +31,7 @@ def home(request):
 
 ##################
 
-def category_manage(request, tag_id):
+def category_manage(request, tag_slug):
     if request.LANGUAGE_CODE == "es":
         current_language = 'Español'
     else:
@@ -41,6 +41,7 @@ def category_manage(request, tag_id):
         current_language = request.COOKIES['lang']
 
     posts = Post.objects.filter(language__title=current_language).order_by('-timestamp')
+    tagCur = get_object_or_404(Tag, slug=tag_slug)
 
     tags = []
     tags_title = []
@@ -51,7 +52,7 @@ def category_manage(request, tag_id):
                 tags_title.append(tag.title)
 
     print(tags)
-    response = render(request, 'home.html', {'posts': posts, 'language': current_language, 'tags': tags, 'category': tag_id})
+    response = render(request, 'home.html', {'posts': posts, 'language': current_language, 'tags': tags, 'category': tagCur.id})
     return response
 
 ##################

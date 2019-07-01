@@ -19,7 +19,7 @@
                     <div class="mb-3">
                         <p class="card-title pt-1 pr-3" style="font-weight: lighter ;font-family: 'Nexa Bold'; float:left">Tags: </p>
                         {% for tag in post.tags.all %}
-                            <a href="{% url 'tag' tag.id %}" style="font-family: PT Sans ; text-decoration: none; color: inherit">
+                            <a href="{% url 'tag' tag.slug %}" style="font-family: PT Sans ; text-decoration: none; color: inherit">
                                 <button class="btn btn-custom btn-sm pt-2 px-3" style="font-family:PT Sans; border-radius: 7%;">
                                     {{ tag.title }}
                                 </button>

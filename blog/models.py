@@ -1,12 +1,10 @@
 from django.db import models
-import random
 
 from tinymce import HTMLField
 from django.contrib.auth import get_user_model
 
-# default to 1 day from now
 def get_random_number():
-  return random.randint(1,1001)
+    return
 
 User = get_user_model()
 
@@ -20,10 +18,14 @@ class Author(models.Model):
 
 class Tag(models.Model):
     title = models.CharField(max_length=20)
-    slug = models.SlugField(max_length=50, default='bla')
+    slug = models.SlugField(max_length=50, unique=True)
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        self.slug = self.slug or slugify(self.title)
+        super().save(*args, **kwargs)
 
 class About(models.Model):
     español = HTMLField()
