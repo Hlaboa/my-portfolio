@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>21 reasons to sign the peace </title>
+
+    <link rel="stylesheet" href="https://d19vzq90twjlae.cloudfront.net/leaflet-0.7/leaflet.css"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Yanone+Kaffeesatz:200" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static '/21VYZ/styles.css' %}">
+
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <script>
+       var GLOBAL_PATH = '{{ STATIC_PATH }}';
+    </script>
+
+</head>
+
+<body>
+
+    <!-- MODAL-->
+    <div class="modal"></div>
+        <div class ="icons_modal">
+                <div class="row justify-content-around">
+                    <img src={%  static "21VYZ/Assets/reasons_img/children.png" %}>
+                    <img src={%  static "21VYZ/Assets/reasons_img/crime.png" %}>
+                    <img src={%  static "21VYZ/Assets/reasons_img/cult_intang.png" %}>
+                    <img src={%  static "21VYZ/Assets/reasons_img/cult_tang.png" %}>
+                    <img src={%  static "21VYZ/Assets/reasons_img/drugs.png" %}>
+                    <img src={%  static "21VYZ/Assets/reasons_img/indigenous.png" %}>
+                    <img src={%  static "21VYZ/Assets/reasons_img/life.png" %}>
+                </div>
+                 <div class="row justify-content-around">
+                    <img src={%  static "21VYZ/Assets/reasons_img/media_gov.png" %}>
+                    <img src={%  static "21VYZ/Assets/reasons_img/media_roles.png" %}>
+                    <img src={%  static "21VYZ/Assets/reasons_img/movement.png" %}>
+                    <img src={%  static "21VYZ/Assets/reasons_img/natural.png" %}>
+                    <img src={%  static "21VYZ/Assets/reasons_img/nomadism.png" %}>
+                    <img src={%  static "21VYZ/Assets/reasons_img/racial.png" %}>
+                    <img src={%  static "21VYZ/Assets/reasons_img/refugees.png" %}>
+                </div>
+                <div class="row justify-content-around">
+                    <img src={%  static "21VYZ/Assets/reasons_img/religion.png" %}>
+                    <img src={%  static "21VYZ/Assets/reasons_img/sexual.png" %}>
+                    <img src={%  static "21VYZ/Assets/reasons_img/slavery.png" %}>
+                    <img src={%  static "21VYZ/Assets/reasons_img/speech.png" %}>
+                    <img src={%  static "21VYZ/Assets/reasons_img/state.png" %}>
+                    <img src={%  static "21VYZ/Assets/reasons_img/torture.png" %}>
+                    <img src={%  static "21VYZ/Assets/reasons_img/vote.png" %}>
+                </div>
+        </div>
+
+    <p class="title_modal">21 reasons to sign the peace</p>
+    <p class="explain_modal_1">An interactive data visualization project to explore worldwide peace agreements</p>
+    <p class="explain_modal_2">Start by choosing a reason why peace can be signed</p>
+
+    <!-- MAIN PAGE -->
+
+    <div class="main container-fluid" id="main">
+        <div class="row">
+            <div class="col-8">
+                <div class="title_box">
+                    <svg width="300" height="75">
+                        <g>
+                            <path id="title_curved" d="M6 50, Q 148 15, 300 51"></path>
+                            <text>
+                                <textPath xlink:href="#title_curved" style="text-decoration: underline; -webkit-text-decoration-style:wavy; text-decoration-style: wavy">21 reasons to sign the peace</textPath>
+                            </text>
+                        </g>
+                    </svg>
+                </div>
+                <div class ="icons_box">
+                    <div class="row justify-content-around">
+                        <label><input type="radio" name="reasons" value="children"><img src="../static/21VYZ/Assets/reasons_img/children.png"></label>
+                        <label><input type="radio" name="reasons" value="crime"><img src="../static/21VYZ/Assets/reasons_img/crime.png"></label>
+                        <label><input type="radio" name="reasons" value="cult_intang"><img src="../static/21VYZ/Assets/reasons_img/cult_intang.png"></label>
+                        <label><input type="radio" name="reasons" value="cult_tang"><img src="../static/21VYZ/Assets/reasons_img/cult_tang.png"></label>
+                        <label><input type="radio" name="reasons" value="drugs"><img src="../static/21VYZ/Assets/reasons_img/drugs.png"></label>
+                        <label><input type="radio" name="reasons" value="indigenous"><img src="../static/21VYZ/Assets/reasons_img/indigenous.png"></label>
+                        <label><input type="radio" name="reasons" value="life"><img src="../static/21VYZ/Assets/reasons_img/life.png"></label>
+                    </div>
+                     <div class="row justify-content-around">
+                         <label><input type="radio" name="reasons" value="media_gov"><img src="../static/21VYZ/Assets/reasons_img/media_gov.png"></label>
+                        <label><input type="radio" name="reasons" value="media_roles"><img src="../static/21VYZ/Assets/reasons_img/media_roles.png"></label>
+                        <label><input type="radio" name="reasons" value="movement"><img src="../static/21VYZ/Assets/reasons_img/movement.png"></label>
+                        <label><input type="radio" name="reasons" value="natural"><img src="../static/21VYZ/Assets/reasons_img/natural.png"></label>
+                        <label><input type="radio" name="reasons" value="nomadism"><img src="../static/21VYZ/Assets/reasons_img/nomadism.png"></label>
+                        <label><input type="radio" name="reasons" value="racial"><img src="../static/21VYZ/Assets/reasons_img/racial.png"></label>
+                        <label><input type="radio" name="reasons" value="refugees"><img src="../static/21VYZ/Assets/reasons_img/refugees.png"></label>
+                    </div>
+                    <div class="row justify-content-around">
+                        <label><input type="radio" name="reasons" value="religion"><img src="../static/21VYZ/Assets/reasons_img/religion.png"></label>
+                        <label><input type="radio" name="reasons" value="sexual"><img src="../static/21VYZ/Assets/reasons_img/sexual.png"></label>
+                        <label><input type="radio" name="reasons" value="slavery"><img src="../static/21VYZ/Assets/reasons_img/slavery.png"></label>
+                        <label><input type="radio" name="reasons" value="speech"><img src="../static/21VYZ/Assets/reasons_img/speech.png"></label>
+                        <label><input type="radio" name="reasons" value="state"><img src="../static/21VYZ/Assets/reasons_img/state.png"></label>
+                        <label><input type="radio" name="reasons" value="torture"><img src="../static/21VYZ/Assets/reasons_img/torture.png"></label>
+                        <label><input type="radio" name="reasons" value="vote"><img src="../static/21VYZ/Assets/reasons_img/vote.png"></label>
+                    </div>
+                </div>
+                <div class="map_box" id="map_holder"></div>
+
+                <div class="chart_box">
+                    <div id="visualization"></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="reason_box">
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="reason_title"></p>
+                        </div>
+                        <div class="col-6" id="reason_image"></div>
+                    </div>
+                    <div class="row">
+                        <p class="text_explanation"></p>
+                    </div>
+                </div>
+                <div class="flags_box">
+                    <p class="text_country_1"></p>
+                    <img class="flag_country_1">
+
+                    <p class="text_country_1_1"></p>
+                    <img class="flag_country_1_1">
+
+                    <p class="text_country_1_2"></p>
+                    <img class="flag_country_1_2">
+
+                    <p class="text_multi_country">More than 2 countries involved</p>
+                </div>
+                <div class="agreement_box"></div>
+                <a href="" class="download_icon" ><img class="download_image" src="../static/21VYZ/Assets/download_icon.png"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static '/21VYZ/index.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,472 @@
+
+/* --------------------- */
+/* ----- MAIN PAGE ----- */
+/* --------------------- */
+
+body {
+    margin: 10px;
+    min-width: 1000px;
+    height: 100%;
+    overflow: -moz-scrollbars-vertical;
+    font-family: Baskerville;
+}
+
+#main{
+    z-index: 1;
+}
+
+
+/*******  TITLE **********/
+/*************************/
+
+.title_box{
+    height: 90px;
+    text-align: center;
+    padding-top: 10px;
+    max-width: 700px;
+    margin: auto;
+}
+
+#title_curved {
+    fill: transparent;
+}
+
+textPath{
+    font-size: 1.6em;
+}
+
+
+
+/*******  REASONS EXPLANATION  **********/
+/****************************************/
+
+.reason_box{
+    padding-top: 40px;
+    padding-left: 15px;
+    margin-right: 20px;
+    height: 320px;
+}
+
+img.reason_selected{
+    margin-top:-50px;
+    width:160px;
+    height: 160px;
+    filter: grayscale(100%) brightness(60%);
+}
+
+#reason_image{
+    padding-top: 40px;
+}
+
+
+
+/*******  ICONS  **********/
+/**************************/
+
+.icons_box{
+    height: 190px;
+    max-width: 700px;
+    margin: auto;
+}
+
+img {
+    filter: grayscale(95%) brightness(60%);
+    width:50px;
+    height: 50px;
+}
+
+/* Hide radio */
+[type=radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Icon style */
+[type=radio] + img {
+    cursor: pointer;
+    filter: grayscale(100%) brightness(60%);
+    outline: none;
+    box-shadow: none;
+    width:50px;
+    height: 50px;
+    margin-left: 10px;
+}
+
+/* Hovered icon style */
+[type=radio]:hover + img {
+    height: 47px;
+    filter: grayscale(30%) brightness(80%);
+}
+
+/* Checked icon style */
+[type=radio]:checked + img {
+    filter: grayscale(0%) brightness(100%);
+}
+
+
+
+/*******  CHART  **********/
+/**************************/
+
+.chart_box{
+    height: 180px;
+}
+
+.y_axis {
+    font-size:8px;
+}
+
+/*******  AGREEMENT  **********/
+/******************************/
+
+.agreement_box{
+    height: 480px;
+    width: 350px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.agreementSelected{
+    padding-left: -20px;
+}
+
+p.text_explanation{
+    margin-top:20px;
+}
+
+#pergamino_image{
+    padding-top: 100px;
+}
+
+.text_pergamino{
+    overflow: hidden;
+}
+
+/* DOWNLOAD ICON */
+.download_image{
+    height: 25px;
+    width: 25px;
+    filter: grayscale(0%) brightness(100%);
+    opacity: 0.9;
+}
+
+.download_image:hover{
+    filter: grayscale(50%) brightness(50%);
+}
+
+.download_icon{
+    position:absolute;
+    background: none;
+    border: none;
+    margin: auto;
+    left: calc(50%);
+    bottom: 45px;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+button:focus{
+    outline:0;
+}
+
+
+
+/*******  FLAGS  **********/
+/**************************/
+
+.flags_box{
+    height: 130px;
+}
+
+/* FLAG IMAGES */
+img.flag_country_1, img.flag_country_1_1, img.flag_country_1_2 {
+
+    width: 80px;
+    filter: grayscale(25%) brightness(95%);
+    max-height:50px;
+    position:absolute;
+    bottom: 480px;
+    height: auto;
+    z-index: -1;
+}
+
+img.flag_country_1 {
+
+    left: calc(50% - 25px);
+}
+
+img.flag_country_1_1 {
+
+    left: calc(50% + 50px);
+}
+
+img.flag_country_1_2 {
+
+    right: calc(50% + 20px);
+}
+
+
+/* FLAG TEXT */
+p.text_country_1, p.text_country_1_1, p.text_country_1_2, p.text_multi_country {
+
+    position:absolute;
+    font-family: "Lucida Console";
+    height: auto;
+    text-align: center;
+    overflow: hidden;
+}
+
+p.text_country_1, p.text_country_1_1, p.text_country_1_2 {
+
+    overflow: hidden;
+    bottom: 510px;
+    font-size: 0.85em;
+    bottom: 514px;
+}
+
+p.text_country_1{
+
+    width: 100%;
+}
+
+p.text_country_1_1 {
+
+    width: 150px;
+    right: calc(50%);
+}
+
+p.text_country_1_2 {
+
+    width: 150px;
+    left: calc(50% + 10px);
+}
+
+p.text_multi_country {
+
+    bottom: 480px;
+    left: calc(50% - 80px);
+    margin-right: auto;
+    font-weight: bold;
+    font-size: 0.95em;
+    opacity: 0;
+}
+
+
+
+/*******  MAP  **********/
+/************************/
+
+#map_holder {
+    margin-left:50px;
+    max-width: 1100px;
+    min-height: 450px;
+}
+
+svg rect {
+    fill: transparent;   /* map background colour */
+}
+
+.country_reason{
+   fill: rgba(58, 58, 58, 0.06);   /* country colour */
+}
+
+.country_on{
+    fill: #d68037;   /* highlight colour for selected country */
+}
+
+.country_label{
+    visibility: hidden;   /* hide all country labels by default */
+}
+
+.country_label_selected{
+    visibility: hidden;   /* hide all country labels by default */
+}
+
+path[class^="country_selected"] {
+  cursor: pointer;
+}
+
+.country_name{
+    fill: #4b2e16;   /* country label text colour */
+}
+.country_label_bg{
+    font-family: Baskerville;
+    font-style: oblique;
+    fill: rgba(255, 255, 255, 0.8);   /* country label background colour */
+}
+
+
+
+/* ------------------ */
+/* INITIAL PAGE MODAL */
+/* ------------------ */
+
+/* MODAL GENERAL */
+.modal{
+    z-index:-100;
+    position:absolute;
+    width:100%;
+    height: 920px;
+    visibility: visible;
+    display: block;
+
+    -webkit-animation-name: modal; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 19.8s;
+    animation-name: modal;
+    animation-duration: 19.8s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes modal {
+    0%   {z-index:2; background: rgb(255, 255, 255, 1); }
+    87%  {z-index:2; background: rgb(255, 255, 255, 1); }
+    97%  {z-index:2; background: rgb(255, 255, 255, 0); }
+    100%  {z-index:-100; background: rgb(255, 255, 255, 0); }
+}
+
+/* Standard syntax */
+@keyframes modal {
+    0%   {z-index:2; background: rgb(255, 255, 255, 1); }
+    87%  {z-index:2; background: rgb(255, 255, 255, 1); }
+    97%  {z-index:2; background: rgb(255, 255, 255, 0); }
+    100%  {z-index:-100; background: rgb(255, 255, 255, 0); }
+}
+
+.icons_modal, .title_modal, .explain_modal_1, .explain_modal_2{
+    z-index:-100;
+    position: absolute;
+    opacity:0;
+    height: 0;
+    max-width: 700px;
+    margin-top: 89px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.icons_modal{
+    -webkit-animation-name: icons_modal; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 18s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-delay: 1s
+    animation-name: icons_modal;
+    animation-duration: 18s;
+    animation-delay: 1s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes icons_modal {
+    0%    {z-index:5; height:190; opacity:0; left:0; right:calc(30%)}
+    25%  {z-index:5; height:190; opacity:1; left:0; right:0}
+    80%  {z-index:5; height:190; opacity:1; left:0; right:0}
+    99%  {z-index:5; height:190; opacity:0; left:0; right:calc(32%)}
+    100%  {z-index:-100; height:0; opacity:0; left:0; right:0}
+}
+
+/* Standard syntax */
+@keyframes icons_modal {
+    0%    {z-index:5; height:190; opacity:0; left:0; right:calc(30%)}
+    25%  {z-index:5; height:190; opacity:1; left:0; right:0}
+    80%  {z-index:5; height:190; opacity:1; left:0; right:0}
+    99%  {z-index:5; height:190; opacity:0; left:0; right:calc(32%)}
+    100%  {z-index:-100; height:0; opacity:0; left:0; right:0}
+}
+
+/* MODAL TITLE */
+.title_modal, .explain_modal_1, .explain_modal_2{
+    font-size: 3em;
+    font-style: oblique;
+    color: #4b4b4b;
+    text-align: center;
+
+    max-width: 500px;
+    margin-top: 300px;
+    left:0;
+    right:0;
+
+    -webkit-animation-name: title_modal; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 5.5s;
+    -webkit-animation-delay: 4s;
+    animation-name: title_modal;
+    animation-duration: 5.5s;
+    animation-delay: 4s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes title_modal {
+    0%    {z-index:5; height:190; opacity:0}
+    60%   {z-index:5; height:190; opacity:1}
+    75%   {z-index:5; height:190; opacity:0}
+    100%  {z-index:-100; height:190; opacity:0}
+}
+
+/* Standard syntax */
+@keyframes title_modal {
+    0%    {z-index:5; height:190; opacity:0}
+    60%   {z-index:5; height:190; opacity:1}
+    75%   {z-index:5; height:190; opacity:0}
+    100%  {z-index:-100; height:190; opacity:0}
+}
+
+/* MODAL EXPLANATIONS */
+.explain_modal_1, .explain_modal_2{
+    max-width: 550px;
+    font-size: 2em;
+}
+
+/* 1st. MODAL EXPLANATION */
+.explain_modal_1{
+    -webkit-animation-name: explain_modal_1; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-delay: 8s;
+    animation-name: explain_modal_1;
+    animation-duration: 4s;
+    animation-delay: 8s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes explain_modal_1 {
+    0%    {z-index:5; height:190; opacity:0.2}
+    50%   {z-index:5; height:190; opacity:1}
+    80%   {z-index:5; height:190; opacity:1}
+    99%   {z-index:5; height:190; opacity:0}
+    100%  {z-index:-100; height:0; opacity:0}
+}
+
+/* Standard syntax */
+@keyframes explain_modal_1 {
+    0%    {z-index:5; height:190; opacity:0.2}
+    50%   {z-index:5; height:190; opacity:1}
+    80%   {z-index:5; height:190; opacity:1}
+    99%   {z-index:5; height:190; opacity:0}
+    100%  {z-index:-100; height:0; opacity:0}
+}
+
+/* 2nd. MODAL EXPLANATION */
+.explain_modal_2{
+    -webkit-animation-name: explain_modal_2; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-delay: 12s;
+    animation-name: explain_modal_2;
+    animation-duration: 3s;
+    animation-delay: 12s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes explain_modal_2 {
+    0%    {z-index:5; height:190; opacity:0.2}
+    50%   {z-index:5; height:190; opacity:1}
+    80%   {z-index:5; height:190; opacity:1}
+    99%   {z-index:5; height:190; opacity:0}
+    100%  {z-index:-100; height:0; opacity:0}
+}
+
+/* Standard syntax */
+@keyframes explain_modal_2 {
+    0%    {z-index:5; height:190; opacity:0.2}
+    50%   {z-index:5; height:190; opacity:1}
+    80%   {z-index:5; height:190; opacity:1}
+    99%   {z-index:5; height:190; opacity:0}
+    100%  {z-index:-100; height:0; opacity:0}
+}

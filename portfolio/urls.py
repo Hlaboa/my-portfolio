@@ -16,6 +16,7 @@ urlpatterns = [
     path('tinymce/', include('tinymce.urls')),
     path('en/',blog.views.english, name='english'),
     path('es/',blog.views.español, name='español'),
+    path('21vyz', TemplateView.as_view(template_name='21vyz.html')),
     path('robots.txt', TemplateView.as_view(template_name='robots.txt', content_type='text/plain'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)   # we add MEDIA URL and MEDIA ROOT
 

@@ -1,0 +1,107 @@
+[
+  {
+    "reason": "Children",
+    "id": "children",
+    "explanation": "Peace agreements that contain provision(s) on children, child rights, youth, young people, or similar"
+  },
+  {
+    "reason": "Race",
+    "id": "racial",
+    "explanation": "Peace agreements that contain provision(s) related to race, national minorities, ethnic nationalism or similar"
+  },
+  {
+    "reason": "Religion",
+    "id": "religion",
+    "explanation": "Peace agreements that contain provision(s) on religious groups"
+  },
+  {
+    "reason": "Indigenous",
+    "id": "indigenous",
+    "explanation": "Peace agreements that contain provision(s) on indigenous groups"
+  },
+  {
+    "reason": "Refugees",
+    "id": "refugees",
+    "explanation": "Peace agreements that contain provision(s) that address refugee issues, such as return, repatriation and land claims"
+  },
+  {
+    "reason": "Sexual orientation",
+    "id": "sexual",
+    "explanation": "Peace agreements that contain provision(s) related to gay, lesbian, transgender or transsexual people"
+  },
+  {
+    "reason": "Media governance",
+    "id": "media_gov",
+    "explanation": "Peace agreements that contain provision(s) related to governance of media, such as where power over media and communication are assigned"
+  },
+  {
+    "reason": "Media roles",
+    "id": "media_roles",
+    "explanation": "Peace agreements that contain provision(s) dealing with particular roles or access for the media"
+  },
+  {
+    "reason": "Natural resources",
+    "id": "natural",
+    "explanation": "Peace agreements that contain provision(s) related with natural resources, such as hydrocarbons, pasture, forestry, or hydroelectric power generation"
+  },
+  {
+    "reason": "Nomadism",
+    "id": "nomadism",
+    "explanation": "Peace agreements that contain provision(s) for nomadic or pastoralist peoples or communities, including grazing rights"
+  },
+  {
+    "reason": "Culture (tangible)",
+    "id": "cult_tang",
+    "explanation": "Peace agreements that contain provision(s) related to tangible aspects of cultural heritage, such as museums, antiques, monuments or handicrafts"
+  },
+  {
+    "reason": "Culture (intangible)",
+    "id": "cult_intang",
+    "explanation": "Peace agreements that contain provision(s) related to intangible aspects of cultural heritage, such as national languages, dances, songs or traditions"
+  },
+  {
+    "reason": "Drugs",
+    "id": "drugs",
+    "explanation": "Peace agreements that contain provision(s) related to illicit drugs, including drug trading and trafficking"
+  },
+  {
+    "reason": "Crime",
+    "id": "crime",
+    "explanation": "Peace agreements that contain provision(s) related to crime or organised crime"
+  },
+  {
+    "reason": "State definition",
+    "id": "state",
+    "explanation": "Peace agreements that contain provision(s) that refer to the self determination, referendum or secession of the state"
+  },
+  {
+    "reason": "Life",
+    "id": "life",
+    "explanation": "Peace agreements that contain provision(s) related to the right to life"
+  },
+  {
+    "reason": "Torture",
+    "id": "torture",
+    "explanation": "Peace agreements that contain provision(s) related to freedom from torture"
+  },
+  {
+    "reason": "Slavery",
+    "id": "slavery",
+    "explanation": "Peace agreements that contain provision(s) related to the ban of slavery"
+  },
+  {
+    "reason": "Freedom of speech",
+    "id": "speech",
+    "explanation": "Peace agreements that contain provision(s) related to freedom of speech"
+  },
+  {
+    "reason": "Freedom of movement",
+    "id": "movement",
+    "explanation": "Peace agreements that contain provision(s) related to freedom of movement"
+  },
+  {
+    "reason": "Vote",
+    "id": "vote",
+    "explanation": "Peace agreements that contain provision(s) related to the right to vote and participate in public life"
+  }
+]
