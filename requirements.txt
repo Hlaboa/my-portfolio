@@ -1,4 +1,4 @@
-certifi==2019.6.16
+certifi==2022.12.7
 Django==2.2.8
 django-filebrowser-no-grappelli==3.7.8
 django-filter==2.1.0
